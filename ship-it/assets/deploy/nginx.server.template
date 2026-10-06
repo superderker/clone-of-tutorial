@@ -1,0 +1,10 @@
+# Production routing configuration - this file IS the production change:
+# bootstrap.sh / flip.sh replace __COLOR__ (blue or green) via sed, then
+# reload nginx, which is the moment traffic actually moves.
+# Container names resolve through docker's embedded DNS on the cdnet network.
+server {
+    listen 80;
+    location / {
+        proxy_pass http://app-__COLOR__:5000;
+    }
+}

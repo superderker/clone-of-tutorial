@@ -1,0 +1,46 @@
+{
+  "title": "Ship It: Continuous Delivery vs. Continuous Deployment (Blue-Green)",
+  "description": "Build a working CI/CD pipeline in your browser: automated tests, container builds, blue-green releases, dark launches, automatic aborts and instant rollbacks. No accounts needed.",
+  "difficulty": "intermediate",
+  "time": "35 minutes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "intro/background.sh",
+      "foreground": "intro/foreground.sh"
+    },
+    "steps": [
+      { "title": "1. The service and its environments", "text": "step1/text.md", "verify": "step1/verify.sh" },
+      { "title": "2. Continuous Integration: every change is built and tested", "text": "step2/text.md", "verify": "step2/verify.sh" },
+      { "title": "3. Production and deployment strategies: why blue-green", "text": "step3/text.md", "verify": "step3/verify.sh" },
+      { "title": "4. Continuous Delivery: the manual gate", "text": "step4/text.md", "verify": "step4/verify.sh" },
+      { "title": "5. Continuous Deployment: remove the gate", "text": "step5/text.md", "verify": "step5/verify.sh" },
+      { "title": "6. The safety net: a bad release never reaches users", "text": "step6/text.md", "verify": "step6/verify.sh" },
+      { "title": "7. Dark launches and instant rollback", "text": "step7/text.md", "verify": "step7/verify.sh" },
+      { "title": "8. Reflection: when, when not, for whom", "text": "step8/text.md", "verify": "step8/verify.sh" }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        { "file": "app/app.py", "target": "/root/tutorial/app/" },
+        { "file": "app/VERSION", "target": "/root/tutorial/app/" },
+        { "file": "app/Dockerfile", "target": "/root/tutorial/app/" },
+        { "file": "app/tests/test_app.py", "target": "/root/tutorial/app/tests/" },
+        { "file": "ci/pipeline.sh", "target": "/root/tutorial/ci/", "chmod": "+x" },
+        { "file": "deploy/bootstrap.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
+        { "file": "deploy/deploy.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
+        { "file": "deploy/flip.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
+        { "file": "deploy/approve.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
+        { "file": "deploy/rollback.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
+        { "file": "deploy/smoke.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
+        { "file": "deploy/nginx.server.template", "target": "/root/tutorial/deploy/" },
+        { "file": "new_change.sh", "target": "/root/tutorial/", "chmod": "+x" }
+      ]
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
