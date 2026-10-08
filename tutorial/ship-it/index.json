@@ -30,6 +30,7 @@
         { "file": "app/Dockerfile", "target": "/root/tutorial/app/" },
         { "file": "app/tests/test_app.py", "target": "/root/tutorial/app/tests/" },
         { "file": "ci/pipeline.sh", "target": "/root/tutorial/ci/", "chmod": "+x" },
+        { "file": "ci/install_hook.sh", "target": "/root/tutorial/ci/", "chmod": "+x" },
         { "file": "deploy/bootstrap.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
         { "file": "deploy/deploy.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
         { "file": "deploy/flip.sh", "target": "/root/tutorial/deploy/", "chmod": "+x" },
