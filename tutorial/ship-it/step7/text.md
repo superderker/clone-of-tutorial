@@ -42,3 +42,7 @@ Seeing not found in the shop tab? Your browser is still on the /beta page — an
 > Note the honest limitation printed by `rollback.sh` when no previous release
 > survives: _roll forward_ (fix and redeploy) is the only option — which is only
 > acceptable because your pipeline is fast.
+
+
+
+Production now runs v3 on blue, with v5 parked on green. The architecture diagram still has one manual arrow: *git commit* into the pipeline. Until now you started every pipeline run by hand. In **Step 8** a commit will start it for you.

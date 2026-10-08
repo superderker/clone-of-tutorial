@@ -52,4 +52,6 @@ This hook is a teaching device. It shows the mechanism, but it is weaker than a 
 
 Real platforms such as Jenkins or GitHub Actions replace the local hook with a **webhook**: the Git server notifies the CI server that a push happened, and the CI server runs the pipeline on its own clean machine. The principle is the same one you just saw, with the trigger moved somewhere reliable.
 
-**Adage 2 — The Cost of Change Is Dead** needs this step. Small, frequent changes are only cheap if checking each one costs nobody any effort. When
+**Adage 2 — The Cost of Change Is Dead** needs this step. Small, frequent changes are only cheap if checking each one costs nobody any effort. When integration is automatic, a broken commit is found within seconds of being made.
+
+Click **CHECK**, then continue to the final reflection.

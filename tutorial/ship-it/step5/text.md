@@ -3,7 +3,13 @@
 **What:** run the same pipeline with one policy change.
 
 **Why:** [Continuous Deployment](https://en.wikipedia.org/wiki/Continuous_deployment) extends continuous delivery by removing the manual release gate: every change that passes all required automated checks can be deployed to production automatically. Look how thin the technical difference is:
-
+```bash
+  if [ "${APPROVAL:-auto}" = "manual" ]; then
+    echo "$IDLE $V" > "$CANDIDATE"   # park the verified candidate...
+    exit 0                           # ...and wait for ./deploy/approve.sh
+  fi
+  ./deploy/flip.sh "$IDLE"           # auto: release immediately
+```
 No new deployment machinery is required — the gate is a **policy decision**, not a separate technology. That is why the DigitalOcean article describes continuous deployment as "one step further" than continuous delivery.
 
 Commit v3 and let it flow through, untouched by human hands:

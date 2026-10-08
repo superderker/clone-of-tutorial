@@ -11,8 +11,13 @@ Open the shop: [http://localhost:8080]({{TRAFFIC_HOST1_8080}}) — blue backgrou
 ### The strategy question
 
 How do you put a new version on a running service? The main options ([blue-green deployment, Wikipedia](https://en.wikipedia.org/wiki/Blue%E2%80%93green_deployment)):
-
-We choose **blue-green**: two identical environments; the proxy points at one; releases go to the idle one; a config change flips traffic. Rollback is just flipping back. Its costs — double capacity and database-migration headaches — are part of the reflection in Step 8.
+| Strategy | How it works | Downtime | Rollback | Main cost |
+| :--- | :--- | :--- | :--- | :--- |
+| **Recreate** | Stop old, start new | Yes | Redeploy the old version | None, but users see the gap |
+| **Rolling** | Replace instances one by one | No | Slow, passes through mixed versions | Two versions serve users at once |
+| **Blue-green** | Two environments, switch traffic | None planned | Flip back | Double capacity |
+| **Canary** | Send a small share of traffic to the new version | None | Shift traffic back | Needs traffic splitting and metrics |
+We choose **blue-green**: two identical environments; the proxy points at one; releases go to the idle one; a config change flips traffic. Rollback is just flipping back. Its costs — double capacity and database-migration headaches — are part of the reflection in Step 9.
 
 Check what the proxy serves, and note blue's direct port **`:8081`**:
 
