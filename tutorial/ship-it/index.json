@@ -17,7 +17,8 @@
       { "title": "5. Continuous Deployment: remove the gate", "text": "step5/text.md", "verify": "step5/verify.sh" },
       { "title": "6. The safety net: a bad release never reaches users", "text": "step6/text.md", "verify": "step6/verify.sh" },
       { "title": "7. Dark launches and instant rollback", "text": "step7/text.md", "verify": "step7/verify.sh" },
-      { "title": "8. Reflection: when, when not, for whom", "text": "step8/text.md", "verify": "step8/verify.sh" }
+      { "title": "8. Continuous Integration for real: every commit triggers the pipeline", "text": "step8/text.md", "verify": "step8/verify.sh" },
+      { "title": "9. Reflection: when, when not, for whom", "text": "step9/text.md", "verify": "step9/verify.sh" }
     ],
     "finish": {
       "text": "finish.md"

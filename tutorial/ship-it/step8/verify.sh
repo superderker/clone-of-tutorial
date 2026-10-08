@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-# step8/verify.sh — wrap-up: the repo carries the release history
-# (initial v1 plus at least three shipped releases).
-# Exit 0 = step complete.
-
-COUNT=$(git -C "$HOME/tutorial" rev-list --count HEAD 2>/dev/null || echo 0)
-[ "$COUNT" -ge 4 ] || exit 1
-
+# step8/verify.sh — a commit triggered CI on its own (hook installed, v6 built by the hook).
+HOOK="$HOME/tutorial/.git/hooks/post-commit"
+[ -x "$HOOK" ] || exit 1
+grep -q "CI COMPLETE.*app:6" "$HOME/tutorial/.prod/pipeline.log" 2>/dev/null || exit 1
+docker image inspect app:6 >/dev/null 2>&1 || exit 1
 exit 0
