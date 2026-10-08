@@ -12,7 +12,7 @@ Now the CI server reacts. `ci/pipeline.sh` is a stand-in for Jenkins/GitHub Acti
 
 `./ci/pipeline.sh --ci-only`{{exec}}
 
-Expected: `tests passed`, `image app:2 registered`, `CI COMPLETE`.
+Expected: `tests passed`, `artifact app:2 registered`, `CI COMPLETE`.
 
 Two properties worth noticing:
 

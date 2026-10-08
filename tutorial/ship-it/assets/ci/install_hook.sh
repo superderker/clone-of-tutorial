@@ -6,7 +6,7 @@ HOOK="$ROOT/.git/hooks/post-commit"
 
 cat > "$HOOK" <<'EOF'
 #!/usr/bin/env bash
-cd "$(git rev-parse --show-toplevel)" && ./ci/pipeline.sh --ci-only
+   cd "$(git rev-parse --show-toplevel)" && ./ci/pipeline.sh --ci-only && touch .prod/hook_ran
 EOF
 chmod +x "$HOOK"
 echo "post-commit hook installed: every commit now triggers CI"
